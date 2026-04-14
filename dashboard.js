@@ -14,12 +14,6 @@ window.C360 = {
   clsOpen:false,
 };
 
-/* -- AUTO LOAD -- */
-(function waitForDom(){
-  if(document.getElementById('c360tbody')) window.c360loadData();
-  else setTimeout(waitForDom,200);
-})();
-
 /* -- HELPERS -- */
 window.c360esc=function(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
 window.c360splitTags=function(tags){
@@ -508,3 +502,9 @@ window.c360exportCSV=function(){
   a.download='c360_'+new Date().toISOString().slice(0,10)+'.csv';
   a.click();
 };
+
+/* -- AUTO LOAD -- */
+(function waitForDom(){
+  if(document.getElementById('c360tbody')) window.c360loadData();
+  else setTimeout(waitForDom,200);
+})();
