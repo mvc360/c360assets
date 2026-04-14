@@ -502,9 +502,3 @@ window.c360exportCSV=function(){
   a.download='c360_'+new Date().toISOString().slice(0,10)+'.csv';
   a.click();
 };
-
-/* -- AUTO LOAD -- */
-(function waitForDom(){
-  if(document.getElementById('c360tbody')) window.c360loadData();
-  else setTimeout(waitForDom,200);
-})();
